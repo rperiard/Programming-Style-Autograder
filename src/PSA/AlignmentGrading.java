@@ -133,10 +133,13 @@ public class AlignmentGrading
     public static void main(String[] args)
     {
         Scanner sc = new Scanner(System.in);
-        String input = sc.nextLine();
+        System.out.println("Enter file path: ");
+        String fileInput = sc.nextLine();
+        System.out.println("Enter expected indentation style: (0 for tabs, 1 for four spaces, 2 for five spaces");
+        String numInput = sc.nextLine();
         try
         {
-            System.out.println(gradeAlignment(input, 0));
+            System.out.println(gradeAlignment(fileInput, 0));
         }
         catch (IOException e)
         {
