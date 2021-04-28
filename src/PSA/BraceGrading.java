@@ -4,8 +4,8 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Scanner;
 import java.nio.file.Files;
+import java.util.Scanner;
 
 /**********************************
  This class will be used to evaluate the brace style of a given java file.
@@ -14,8 +14,8 @@ import java.nio.file.Files;
  or braces are used on the line following method declaration in their own line.
  Braces will be graded on 3 different options:
     gradeType 0 = A report will be generated the shows number of occasions each brace type was used.
-    gradeType 1 = The report will show the number of occasions in which braces were NOT placed on the same line as method declaration.
-    gradeType 2 = The report will show the number of occasions in which braces were NOT placed on their own individual line.
+    gradeType 1 = The report will show the number of occasions in which braces were on the line FOLLOWING method declaration.
+    gradeType 2 = The report will show the number of occasions in which braces were on the SAME line as method declaration.
  *********************************/
 
 public class BraceGrading
@@ -26,7 +26,6 @@ public class BraceGrading
         boolean containsLetters = false;
         int bracesOnSameLine = 0;
         int bracesOnNextLine = 0;
-        int lineCount = 1;
 
         //Sets up file to be read by line
         Path filePath = Paths.get(fileName);
@@ -67,26 +66,46 @@ public class BraceGrading
                 }
             }
             line = br.readLine();
-            lineCount++;
+            containsLetters = false;
         }
+
         //Closes reader and returns grading results
         br.close();
-        result = "Lines with braces on the same line as method declaration: " + bracesOnSameLine + ", lines with braces on the line following method declaration: " + bracesOnNextLine;
+        if(gradeType == 0)
+        {
+            result = "Lines with braces on the same line as method declaration: " + bracesOnSameLine + ", lines with braces on the line following method declaration: " + bracesOnNextLine;
+        }
+
+        else if(gradeType == 1)
+        {
+            result = "Errors(BRACES NOT ON FOLLOWING LINE): " + bracesOnSameLine;
+        }
+
+        else if(gradeType == 2)
+        {
+            result = "Errors(BRACES NOT ON SAME LINE): " + bracesOnNextLine;
+        }
+
         return result;
     }
 
+/*
     public static void main(String[] args)
     {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter file path: ");
         String fileInput = sc.nextLine();
+        System.out.println("Enter expected indentation style: (0 for tabs, 1 for four spaces, 2 for five spaces");
+        String numInput = sc.nextLine();
+        int i = Integer.parseInt(numInput);
         try
         {
-            System.out.println(gradeBraces(fileInput, 0));
+            System.out.println(gradeBraces(fileInput, i));
         }
         catch (IOException e)
         {
             System.out.println("File input was not found.");
         }
     }
+ */
 }

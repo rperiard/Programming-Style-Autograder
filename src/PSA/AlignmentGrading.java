@@ -44,7 +44,6 @@ public class AlignmentGrading
             //Scans each line and counts the number of tabs present on each line
             for (int i = 0; i < line.length(); i++)
             {
-
                 if(line.charAt(i) == '\t')
                 {
                     tabCount++;
@@ -71,6 +70,7 @@ public class AlignmentGrading
         return "Errors: " + errors;
     }
 
+    /*
     public static void main(String[] args)
     {
         Scanner sc = new Scanner(System.in);
@@ -87,4 +87,5 @@ public class AlignmentGrading
             System.out.println("File input was not found.");
         }
     }
+     */
 }
