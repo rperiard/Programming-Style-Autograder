@@ -5,7 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 
-class GUI {
+public class GUI {
     public static void main(String args[]) {
 
         //Making the GUI look better
