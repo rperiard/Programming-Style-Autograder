@@ -1,3 +1,0 @@
-Errors in tab/space alignment: 3
-Errors in brace alignment (braces not on next-line): 0
-There were 0 cases of extraneous white space usage.
