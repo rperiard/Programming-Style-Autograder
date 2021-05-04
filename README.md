@@ -1,4 +1,6 @@
-<img align="center" src="https://github.com/rperiard/Programming-Style-Autograder/blob/master/logo.png" class="center">
+<p align="center">
+<img src="https://github.com/rperiard/Programming-Style-Autograder/blob/master/logo.png" class="center">
+</p>
 
 # Programming-Style-Autograder
 
