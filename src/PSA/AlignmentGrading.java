@@ -25,7 +25,7 @@ public class AlignmentGrading
         int currentIndentLevel = 0;
 
         Path filePath = Paths.get(fileName);
-        System.out.println(filePath);
+        //System.out.println(filePath);
         BufferedReader br = Files.newBufferedReader(filePath, StandardCharsets.UTF_8);
         String line;
         line = br.readLine();
@@ -57,7 +57,7 @@ public class AlignmentGrading
                 if(tabCount != currentIndentLevel)
                 {
                     errors++;
-                    System.out.println("Alignment error on line " + lineCount);
+                    //System.out.println("Alignment error on line " + lineCount);
                 }
 
                 //Increases the expected indent level at each opening bracket
@@ -101,7 +101,7 @@ public class AlignmentGrading
                 catch(Exception e)
                 {
                     errors++;
-                    System.out.println("Alignment error on line " + lineCount);
+                    //System.out.println("Alignment error on line " + lineCount);
                     if (line.contains("{"))
                     {
                         currentIndentLevel++;
@@ -118,7 +118,7 @@ public class AlignmentGrading
                 if(fourSpaceCount/4.0 != currentIndentLevel)
                 {
                     errors++;
-                    System.out.println("Alignment error on line " + lineCount);
+                    //System.out.println("Alignment error on line " + lineCount);
                 }
 
                 //Increases the expected indent level at each opening bracket
@@ -164,7 +164,7 @@ public class AlignmentGrading
                 catch(Exception e)
                 {
                     errors++;
-                    System.out.println("Alignment error on line " + lineCount);
+                    //System.out.println("Alignment error on line " + lineCount);
                     if (line.contains("{"))
                     {
                         currentIndentLevel++;
@@ -181,7 +181,7 @@ public class AlignmentGrading
                 if(fiveSpaceCount/5.0 != currentIndentLevel)
                 {
                     errors++;
-                    System.out.println("Alignment error on line " + lineCount);
+                    //System.out.println("Alignment error on line " + lineCount);
                 }
 
                 //Increases the expected indent level at each opening bracket
@@ -196,7 +196,7 @@ public class AlignmentGrading
         }
 
         br.close();
-        return "Errors: " + errors;
+        return "Errors in tab/space alignment: " + errors;
     }
 
 /*

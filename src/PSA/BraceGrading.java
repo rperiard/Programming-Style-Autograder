@@ -29,7 +29,7 @@ public class BraceGrading
 
         //Sets up file to be read by line
         Path filePath = Paths.get(fileName);
-        System.out.println(filePath);
+        //System.out.println(filePath);
         BufferedReader br = Files.newBufferedReader(filePath, StandardCharsets.UTF_8);
         String line;
         line = br.readLine();
@@ -78,12 +78,12 @@ public class BraceGrading
 
         else if(gradeType == 1)
         {
-            result = "Errors(BRACES NOT ON FOLLOWING LINE): " + bracesOnSameLine;
+            result = "Errors in brace alignment (braces not on next-line): " + bracesOnSameLine;
         }
 
         else if(gradeType == 2)
         {
-            result = "Errors(BRACES NOT ON SAME LINE): " + bracesOnNextLine;
+            result = "Errors in brace alignment (braces not on same-line): " + bracesOnNextLine;
         }
 
         return result;

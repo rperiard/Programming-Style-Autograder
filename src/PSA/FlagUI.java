@@ -1,4 +1,4 @@
-package PSA.FLAGUI;
+package PSA;
 
 public class FlagUI {
     

@@ -24,7 +24,7 @@ public class VerticalSpaceGrading
 
         //Sets up file to be read by line
         Path filePath = Paths.get(fileName);
-        System.out.println(filePath);
+        //System.out.println(filePath);
         BufferedReader br = Files.newBufferedReader(filePath, StandardCharsets.UTF_8);
         String line;
         line = br.readLine();
@@ -47,7 +47,7 @@ public class VerticalSpaceGrading
             if(newLineCounter > 1)
             {
                 errors++;
-                errorLines.add("Extraneous line of white space on line " + lineCount + ".");
+                errorLines.add("Errors in vertical white space (extraneous white space usage): " + lineCount + ".");
             }
 
             line = br.readLine();
