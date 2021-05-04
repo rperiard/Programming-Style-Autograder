@@ -1,6 +1,5 @@
-<p align="center">
-<img src="https://github.com/rperiard/Programming-Style-Autograder/blob/master/logo.png" class="center">
-</p>
+<img align="center" src="https://github.com/rperiard/Programming-Style-Autograder/blob/master/logo.png" class="center">
+
 # Programming-Style-Autograder
 
 This product is being made to streamline student file grading in computer science and other coding-related classes. 
